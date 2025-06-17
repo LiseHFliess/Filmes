@@ -1,0 +1,121 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Light gray background for the page */
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #fff; /* White background for the navbar container */
+    padding: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.navbar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center the menu items */
+    height: 60px; /* Fixed height for the menu bar */
+}
+
+.navbar nav ul li {
+    flex: 1; /* Distribute space equally */
+    text-align: center; /* Center text within each item */
+}
+
+.navbar nav ul li a {
+    display: block; /* Make the entire link area clickable */
+    text-decoration: none;
+    color: #fff; /* White text for menu items */
+    padding: 15px 0; /* Vertical padding, no horizontal */
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    height: 100%; /* Make link fill the list item height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Specific background colors for menu items */
+.menu-home { background-color: #6CAF4D; } /* Green */
+.menu-about { background-color: #3498DB; } /* Blue (Using a slightly different blue for contrast) */
+.menu-portfolio { background-color: #FFD700; color: #333;} /* Gold, dark text */
+.menu-contact { background-color: #FF69B4; } /* Pink */
+.menu-more { background-color: #8A2BE2; } /* Purple */
+
+/* Hover effect for menu items */
+.navbar nav ul li a:hover {
+    opacity: 0.9;
+}
+
+/* Main Content Styling */
+.content {
+    max-width: 1200px; /* Max width for content */
+    margin: 20px auto; /* Center the content with some top/bottom margin */
+    padding: 0 20px; /* Horizontal padding for smaller screens */
+}
+
+/* Banner Section Styling */
+.banner-section {
+    width: 100%;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures image doesn't overflow its container */
+    border-radius: 8px; /* Slightly rounded corners for the banner */
+}
+
+.banner-img {
+    width: 100%;
+    height: auto;
+    display: block; /* Removes extra space below image */
+}
+
+/* Cards Section Styling */
+.cards-section {
+    display: flex;
+    justify-content: space-around; /* Distribute cards evenly */
+    gap: 20px; /* Space between cards */
+    flex-wrap: wrap; /* Allow cards to wrap to the next line on smaller screens */
+}
+
+.card {
+    background-color: #D3CDE6; /* Light purple color for cards */
+    border-radius: 15px; /* More rounded corners for cards */
+    width: calc(33.33% - 20px); /* Roughly one-third width, accounting for gap */
+    height: 250px; /* Fixed height for cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar nav ul {
+        flex-wrap: wrap; /* Allow menu items to wrap on smaller screens */
+        height: auto; /* Auto height for wrapped menu */
+    }
+
+    .navbar nav ul li {
+        flex: 1 1 50%; /* Two items per row on smaller screens */
+    }
+
+    .card {
+        width: calc(50% - 20px); /* Two cards per row on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar nav ul li {
+        flex: 1 1 100%; /* One item per row on very small screens */
+    }
+
+    .card {
+        width: 100%; /* One card per row on small screens */
+    }
+}
