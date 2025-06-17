@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0e6ff; /* Um tom claro de roxo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* Para evitar scrollbars indesejadas por elementos fora da tela */
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px; /* Ajuste conforme necessário para o tamanho ideal */
+    height: 100vh;
+    position: relative;
+    background-color: #f0e6ff; /* Fundo principal da página */
+    overflow: hidden;
+}
+
+/* Curva superior esquerda */
+.top-left-curve {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px; /* Ajuste o tamanho da curva */
+    height: 250px; /* Ajuste o tamanho da curva */
+    background-color: #d1baff; /* Cor do roxo mais escuro */
+    border-bottom-right-radius: 100% 50%; /* Faz a curva */
+    transform: rotate(180deg); /* Rotaciona para posicionar corretamente */
+    transform-origin: top left;
+}
+
+/* Planta inferior esquerda */
+.bottom-left-plant {
+    position: absolute;
+    bottom: 50px; /* Ajuste a posição */
+    left: 50px; /* Ajuste a posição */
+    width: 100px; /* Ajuste o tamanho da imagem da planta */
+    height: auto;
+}
+
+.bottom-left-plant img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.2)); /* Sombra sutil */
+}
+
+/* Cabeçalho */
+.header {
+    position: absolute;
+    top: 150px; /* Ajuste a posição vertical */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.header h1 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 3.5em;
+    color: #4a0072; /* Cor do texto "Group Project" */
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para o texto */
+}
+
+.header .presented-by {
+    font-family: Arial, sans-serif;
+    font-size: 1.1em;
+    color: #4a0072;
+    background-color: #bfaaff; /* Fundo do texto "Presented by..." */
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin-top: 10px;
+    display: inline-block; /* Para o background ficar certinho */
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Borboleta */
+.butterfly {
+    position: absolute;
+    top: 120px; /* Ajuste a posição */
+    right: 35%; /* Ajuste a posição */
+    width: 80px; /* Ajuste o tamanho da borboleta */
+    height: auto;
+}
+
+.butterfly img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.2)); /* Sombra sutil */
+}
+
+/* Elementos superiores direitos */
+.top-right-elements {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px; /* Largura total da área superior direita */
+    height: 300px; /* Altura total da área superior direita */
+    overflow: hidden;
+}
+
+.top-right-text {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-family: 'Fredoka One', cursive; /* Use a mesma fonte do título */
+    font-size: 2em;
+    color: #d1baff; /* Cor do texto "rel" */
+    transform: rotate(10deg); /* Levemente rotacionado */
+    z-index: 2; /* Para ficar acima da curva */
+}
+
+.top-right-curve {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 350px; /* Ajuste o tamanho da curva */
+    height: 250px; /* Ajuste o tamanho da curva */
+    background-color: #d1baff; /* Cor do roxo mais escuro */
+    border-bottom-left-radius: 100% 50%; /* Faz a curva */
+    z-index: 1;
+}
+
+.top-right-flowers {
+    position: absolute;
+    bottom: 50px; /* Ajuste a posição */
+    right: 50px; /* Ajuste a posição */
+    width: 200px; /* Ajuste o tamanho da imagem das flores */
+    height: auto;
+    z-index: 2; /* Para ficar acima da curva */
+}
+
+.top-right-flowers img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.2)); /* Sombra sutil */
+}
+
+
+/* Caixas de conteúdo */
+.content-boxes {
+    position: absolute;
+    bottom: 50px; /* Posição das caixas a partir da base */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 40px; /* Espaço entre as caixas */
+}
+
+.content-boxes .box {
+    width: 280px; /* Largura das caixas */
+    height: 350px; /* Altura das caixas */
+    background-color: #d1baff; /* Cor das caixas */
+    border-radius: 20px; /* Bordas arredondadas */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Sombra para as caixas */
+}
+
+/* Responsividade básica (opcional) */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.5em;
+    }
+
+    .content-boxes {
+        flex-direction: column;
+        align-items: center;
+        bottom: 20px;
+        gap: 20px;
+    }
+
+    .content-boxes .box {
+        width: 80%;
+        max-width: 300px;
+        height: 250px;
+    }
+
+    .top-left-curve, .top-right-elements {
+        width: 250px;
+        height: 150px;
+    }
+
+    .bottom-left-plant, .butterfly, .top-right-flowers {
+        width: 70px;
+    }
+
+    .top-right-text {
+        font-size: 1.5em;
+    }
+}
